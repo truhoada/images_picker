@@ -78,6 +78,7 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
   private String WRITE_VIDEO_PATH;
   private String ALBUM_NAME;
   public static String channelName = "chavesgu/images_picker";
+  long MAX_SIZE =60000;//b
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
@@ -120,7 +121,6 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
 
   }
 
-
   @Override
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     _result = result;
@@ -151,6 +151,7 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
         }
         PictureSelectionModel model = PictureSelector.create(activity)
                 .openGallery(chooseType);
+        model.filterMaxFileSize(MAX_SIZE);
         Utils.setLanguage(model, language);
         Utils.setPhotoSelectOpt(model, count, quality);
         if (cropOption!=null) Utils.setCropOpt(model, cropOption);
@@ -179,12 +180,14 @@ public class ImagesPickerPlugin implements FlutterPlugin, MethodCallHandler, Act
         PictureSelectionModel model = PictureSelector.create(activity)
                 .openCamera(chooseType);
         model.setOutputCameraPath(context.getExternalCacheDir().getAbsolutePath());
+        model.filterMaxFileSize(MAX_SIZE);
         if (pickType.equals("PickType.image")) {
           model.cameraFileName("image_picker_camera_"+UUID.randomUUID().toString()+".jpg");
         } else {
           model.cameraFileName("image_picker_camera_"+UUID.randomUUID().toString()+".mp4");
         }
         model.recordVideoSecond(maxTime);
+        model.isCamera(true);
         Utils.setLanguage(model, language);
         Utils.setPhotoSelectOpt(model, 1, quality);
         if (cropOption!=null) Utils.setCropOpt(model, cropOption);
