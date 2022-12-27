@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.chavesgu.images_picker">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.chavesgu.images_picker">
 
   <queries>
     <package android:name="${applicationId}"/>
@@ -15,5 +16,57 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-sdk
+      android:minSdkVersion="19"
+      android:targetSdkVersion="31"
+      tools:overrideLibrary="androidx.camera.view,     androidx.camera:camera-camera2,     androidx.camera.camera2,androidx.camera.lifecycle,     androidx.camera.core"></uses-sdk>
+
+  <application  android:theme="@style/Base.Theme.NoActionBar" >
+    <provider
+        android:name="lib.PictureFileProvider"
+        android:authorities="${applicationId}.luckProvider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+      <meta-data
+          android:name="android.support.FILE_PROVIDER_PATHS"
+          android:resource="@xml/file_paths"></meta-data>
+    </provider>
+    <activity
+        android:name="lib.PictureSelectorActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PictureSelectorWeChatStyleActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PictureSelectorCameraEmptyActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:theme="@style/Picture.Theme.Translucent"></activity>
+    <activity
+        android:name="lib.PictureCustomCameraActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PicturePreviewActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PictureSelectorPreviewWeChatStyleActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PictureVideoPlayActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"
+        android:screenOrientation="sensor"></activity>
+    <activity
+        android:name="lib.PictureExternalPreviewActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="lib.PicturePlayAudioActivity"
+        android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+    <activity
+        android:name="com.example.myapplication.yalantis.ucrop.UCropActivity"
+        android:theme="@style/Base.Theme.NoActionBar"></activity>
+    <activity
+        android:name="com.example.myapplication.yalantis.ucrop.PictureMultiCuttingActivity"
+        android:theme="@style/Base.Theme.NoActionBar"></activity>
+  </application>
+
 </manifest>
 
