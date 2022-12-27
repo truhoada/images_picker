@@ -1,6 +1,6 @@
 package com.chavesgu.images_picker;
 
-import android.content.ContentResolver;
+//import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;

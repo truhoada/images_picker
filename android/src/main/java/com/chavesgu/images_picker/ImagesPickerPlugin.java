@@ -49,14 +49,14 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
-import com.luck.picture.lib.PictureSelectionModel;
-import com.luck.picture.lib.PictureSelector;
-import com.luck.picture.lib.config.PictureConfig;
-import com.luck.picture.lib.config.PictureMimeType;
-import com.luck.picture.lib.entity.LocalMedia;
-import com.luck.picture.lib.language.LanguageConfig;
-import com.luck.picture.lib.listener.OnResultCallbackListener;
-import com.luck.picture.lib.tools.PictureFileUtils;
+import lib.PictureSelectionModel;
+import lib.PictureSelector;
+import lib.config.PictureConfig;
+import lib.config.PictureMimeType;
+import lib.entity.LocalMedia;
+import lib.language.LanguageConfig;
+import lib.listener.OnResultCallbackListener;
+import lib.tools.PictureFileUtils;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;

@@ -1,5 +1,5 @@
 #PictureSelector 2.0
--keep class com.luck.picture.lib.** { *; }
+-keep class luck.picture.lib.** { *; }
 
 #Ucrop
 -dontwarn com.yalantis.ucrop**
