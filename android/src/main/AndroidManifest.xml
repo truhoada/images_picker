@@ -16,9 +16,13 @@
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+  <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+  <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
   <uses-sdk
-      android:minSdkVersion="19"
-      android:targetSdkVersion="31"
+      android:minSdkVersion="21"
+      android:targetSdkVersion="33"
       tools:overrideLibrary="androidx.camera.view,     androidx.camera:camera-camera2,     androidx.camera.camera2,androidx.camera.lifecycle,     androidx.camera.core"></uses-sdk>
 
   <application  android:theme="@style/Base.Theme.NoActionBar" >
