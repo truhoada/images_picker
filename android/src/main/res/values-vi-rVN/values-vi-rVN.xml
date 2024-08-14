@@ -28,8 +28,8 @@
     <string name="picture_jurisdiction">Đọc thẻ nhớ bị từ chối</string>
     <string name="picture_know">Xong</string>
     <string name="picture_long_chart">Hình dài</string>
-    <string name="picture_message_audio_max_num">Bạn có thể chọn tối đa%1$sâm thanh</string>
-    <string name="picture_message_max_num">Bạn có thể chọn tối đa%1$shình ảnh</string>
+    <string name="picture_message_audio_max_num">Bạn có thể chọn tối đa %1$ sâm thanh</string>
+    <string name="picture_message_max_num">Bạn có thể chọn tối đa %1$s hình ảnh</string>
     <string name="picture_message_video_max_num">Bạn có thể chọn tối đa %1$s video</string>
     <string name="picture_min_img_num">Lựa chọn tối thiểu của hình ảnh không được ít hơn %1$s</string>
     <string name="picture_min_video_num">Lựa chọn video tối thiểu phải có ít nhất %1$s</string>
