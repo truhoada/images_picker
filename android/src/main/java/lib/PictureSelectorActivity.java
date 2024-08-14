@@ -320,11 +320,19 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
      * load All Data
      */
     private void loadAllMediaData() {
-        if (PermissionChecker
-                .checkSelfPermission(this, Build.VERSION.SDK_INT >= 33 ? Manifest.permission.READ_MEDIA_IMAGES : Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            readLocalMedia();
+        if (Build.VERSION.SDK_INT >= 33) {
+            if (PermissionChecker.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) && PermissionChecker.checkSelfPermission(this, Manifest.permission.READ_MEDIA_VIDEO)) {
+                readLocalMedia();
+            } else {
+                PermissionChecker.requestPermissions(this, new String[]{Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO}, PictureConfig.APPLY_STORAGE_PERMISSIONS_CODE);
+            }
         } else {
-            PermissionChecker.requestPermissions(this, Build.VERSION.SDK_INT >= 33 ? new String[]{Manifest.permission.READ_MEDIA_IMAGES} : new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PictureConfig.APPLY_STORAGE_PERMISSIONS_CODE);
+            if (PermissionChecker
+                    .checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                readLocalMedia();
+            } else {
+                PermissionChecker.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, PictureConfig.APPLY_STORAGE_PERMISSIONS_CODE);
+            }
         }
     }
 
